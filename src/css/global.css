@@ -1,0 +1,25 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#0d1117;
+font-family:Arial,Helvetica,sans-serif;
+overflow-x:hidden;
+color:white;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+section{
+padding:100px 8%;
+}
