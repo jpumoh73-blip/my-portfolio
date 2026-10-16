@@ -1,101 +1,132 @@
+import { FaGithub } from "react-icons/fa";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import "../css/Projects.css";
+const projects = [
+  {
+    image: "/images/coca-cola.jpg",
+    title: "Coca-Cola Clone",
+    type: "soft drink website",
+    demo:"https://coca-cola-clone-six.vercel.app",
+    github:"https://github.com/jpumoh73-blip/coca-cola-clone",
+    tech: ["React", "JavaScript", "CSS"]
+  },
+  {
+    image: "/images/bella-vista.jpg",
+    title: "Bella Vista",
+    type: "Restaurant Website",
+    demo:"https://bella-vista-qy8e.vercel.app",
+    github:"https://github.com/jpumoh73-blip/bella-vista",
+    tech: ["React", "TypeScript", "Tailwind"]
+  },
+  {
+    image: "/images/movie-app.jpg",
+    title: "Movie App",
+    type: "Movie Discovery App",
+    demo:"https://movie-app-red-theta.vercel.app",
+    github:"https://github.com/jpumoh73-blip/movie-app",
+    tech: ["React", "API", "LocalStorage"]
+  },
+  {
+    image: "/images/amazon-clone.jpg",
+    title: "Mini Amazon Clone",
+    type: "Ecommerce Website",
+    demo:"https://mini-amazon-clone.vercel.app",
+    github:"https://github.com/jpumoh73-blip/mini-amazon-clone",
+    tech: ["React", "JavaScript", "CSS"]
+  }
+];
 
 function Projects() {
-
-  const projects = [
-
-    {
-      id: 1,
-      title: "Coca-Cola Clone ",
-      image: "/images/coca-cola.jpg",
-      description:
-        "A responsive Coca-Cola website built with React featuring product listings, cart functionality, and modern UI.",
-      github: "https://github.com/jpumoh73-blip/Coca-Cola-Clone.git",
-      demo: "https://coca-cola-clone-six.vercel.app",
-    },
-
-    {
-      id: 2,
-      title: "Bella Vista Restaurant",
-      image: "/images/bellavista.jpg",
-      description:
-        "A luxury restaurant website with responsive design, reservation section, gallery, testimonials and elegant UI.",
-      github: "https://github.com/jpumoh73-blip/bella-vista.git",
-      demo: "https://bella-vista-qy8e.vercel.app",
-    },
-
-    {
-      id: 3,
-      title: "Movie App",
-      image: "/images/movie-app.jpg",
-      description:
-        "A movie search application built with React and the OMDB API, allowing users to search for movies and view details.",
-      github: "https://github.com/jpumoh73-blip/movie-app.git",
-      demo: "https://movie-app-red-theta.vercel.app",
-    },
-
-  ];
-
   return (
+    <section className="section projects" id="projects">
 
-    <section className="projects" id="projects">
+      <div className="container">
 
-      <h2>My Projects</h2>
+        <div className="section-heading project-heading">
 
-      <p>
-        Here are some of my recent projects built using React,
-        JavaScript, HTML and CSS.
-      </p>
+          <div>
+            <span className="eyebrow">
+              FEATURED PROJECTS
+            </span>
 
-      <div className="projects-grid">
+            <h2>
+              My Recent Work
+              <span> →</span>
+            </h2>
+          </div>
 
-        {projects.map((project) => (
+          <a href="#projects">
+            View All Projects →
+          </a>
 
-          <div className="project-card" key={project.id}>
+        </div>
 
-            <img
-              src={project.image}
-              alt={project.title}
-            />
+        <div className="projects-grid">
 
-            <div className="project-content">
+          {projects.map((project, index) => (
 
-              <h3>{project.title}</h3>
+            <article className="project-card" key={index}>
 
-              <p>{project.description}</p>
+              <div className="project-image">
 
-              <div className="project-buttons">
-
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="demo-btn"
-                >
-                  Live Demo
-                </a>
-
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="github-btn"
-                >
-                  GitHub
-                </a>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                />
 
               </div>
 
-            </div>
+              <div className="project-content">
 
-          </div>
+                <h3>{project.title}</h3>
 
-        ))}
+                <p>{project.type}</p>
+
+                <div className="project-tech">
+
+                  {project.tech.map((tech) => (
+                    <span key={tech}>
+                      {tech}
+                    </span>
+                  ))}
+
+                </div>
+
+                
+<div className="project-buttons">
+  <a
+    href={project.demo || "#"}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="live-button"
+  >
+    Live Demo
+    <FaArrowUpRightFromSquare />
+  </a>
+
+  <a
+    href={project.github || "#"}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="github-button"
+  >
+    <FaGithub />
+    GitHub
+  </a>
+</div>
+
+
+              </div>
+
+            </article>
+
+          ))}
+
+        </div>
 
       </div>
 
     </section>
-
   );
 }
 

@@ -1,35 +1,112 @@
-import "../css/About.css";
+import { FaArrowRight } from "react-icons/fa6";
 
 function About() {
   return (
-    <section className="about" id="about">
+    <section className="section about" id="about">
 
-      <div className="about-image">
-        <img
-          src="/images/about.jpg"
-          alt="Phinehas John"
-        />
-      </div>
+      <div className="container about-container">
 
-      <div className="about-content">
+        <div className="about-text">
 
-        <h2>About Me</h2>
+          <span className="eyebrow">
+            ABOUT ME
+          </span>
 
-        <p>
-          Hi, I'm Phinehas John, a Frontend React Developer who enjoys
-          creating modern, responsive, and user-friendly websites.
-          I love transforming ideas into beautiful digital experiences
-          using React, JavaScript, HTML, and CSS.
-        </p>
+          <h2>
+            Who I Am
+          </h2>
 
-        <p>
-          I'm constantly improving my skills by building real-world
-          projects and exploring new technologies.
-        </p>
+          <p>
+            I'm a software developer with a strong passion
+            for creating clean, responsive and user-friendly
+            web applications.
+          </p>
 
-        <a href="#projects" className="about-btn">
-          View My Work
-        </a>
+          <p>
+            I enjoy solving problems, learning new technologies
+            and turning ideas into real products.
+          </p>
+
+          <div className="stats">
+
+            <div>
+              <strong>2+</strong>
+              <span>Years Experience</span>
+            </div>
+
+            <div>
+              <strong>10+</strong>
+              <span>Technologies</span>
+            </div>
+
+            <div>
+              <strong>5+</strong>
+              <span>Projects Completed</span>
+            </div>
+
+          </div>
+
+          <a href="#skills" className="outline-button">
+            More About Me
+            <FaArrowRight />
+          </a>
+
+        </div>
+
+        <div className="about-visual">
+
+          <div className="about-card">
+
+            <img
+              src="/images/coding.jpg"
+              alt="Coding"
+            />
+
+            <div className="about-note">
+              Better Code
+              <br />
+              Bigger Dreams.
+            </div>
+
+          </div>
+
+          <div className="journey">
+
+            <h3>My Journey</h3>
+
+            <div className="journey-item">
+              <span>2023</span>
+              <p>
+                Started my coding journey with HTML,
+                CSS & JavaScript
+              </p>
+            </div>
+
+            <div className="journey-item">
+              <span>2024</span>
+              <p>
+                Learned React and built my first real projects
+              </p>
+            </div>
+
+            <div className="journey-item">
+              <span>2025</span>
+              <p>
+                Started working with full-stack technologies
+              </p>
+            </div>
+
+            <div className="journey-item">
+              <span>Now</span>
+              <p>
+                Building real-world projects and growing
+                my career
+              </p>
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 

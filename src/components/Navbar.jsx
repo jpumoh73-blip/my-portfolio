@@ -1,60 +1,48 @@
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-
-import "../css/Navbar.css";
+import {
+  FaArrowUpRightFromSquare,
+  FaBars,
+  FaXmark,
+} from "react-icons/fa6";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <nav className="navbar">
+    <header className="navbar">
+      <div className="container nav-container">
+        <a href="#home" className="logo" onClick={closeMenu}>
+          PJ<span>.</span>
+        </a>
 
-      <div className="logo">
-        Phinehas<span>John</span>
-      </div>
-
-      <ul className={menuOpen ? "nav-links active" : "nav-links"}>
-
-        <li>
-          <a href="#home" onClick={() => setMenuOpen(false)}>
+        <nav className={menuOpen ? "nav-menu mobile-open" : "nav-menu"}>
+          <a href="#home" className="active" onClick={closeMenu}>
             Home
           </a>
-        </li>
+          <a href="#about" onClick={closeMenu}>About</a>
+          <a href="#skills" onClick={closeMenu}>Skills</a>
+          <a href="#projects" onClick={closeMenu}>Projects</a>
+          <a href="#services" onClick={closeMenu}>Services</a>
+          <a href="#contact" onClick={closeMenu}>Contact</a>
+        </nav>
 
-        <li>
-          <a href="#about" onClick={() => setMenuOpen(false)}>
-            About
-          </a>
-        </li>
+        <a href="#contact" className="nav-button">
+          Let's Talk <FaArrowUpRightFromSquare />
+        </a>
 
-        <li>
-          <a href="#skills" onClick={() => setMenuOpen(false)}>
-            Skills
-          </a>
-        </li>
-
-        <li>
-          <a href="#projects" onClick={() => setMenuOpen(false)}>
-            Projects
-          </a>
-        </li>
-
-        <li>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>
-            Contact
-          </a>
-        </li>
-
-      </ul>
-
-      <div
-        className="menu-icon"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? <FaTimes /> : <FaBars />}
+        <button
+          type="button"
+          className="hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? <FaXmark /> : <FaBars />}
+        </button>
       </div>
-
-    </nav>
+    </header>
   );
 }
 

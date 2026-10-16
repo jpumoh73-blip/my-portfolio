@@ -1,86 +1,311 @@
-.contact{
-padding:100px 8%;
-background:#161b22;
-text-align:center;
+/* ===========================
+   CONTACT SECTION
+=========================== */
+
+.contact {
+  position: relative;
+  padding: 100px 7%;
+  background: #080b16;
+  color: #ffffff;
+  overflow: hidden;
 }
 
-.contact h2{
-font-size:3rem;
-color:var(--primary);
-margin-bottom:20px;
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: -120px;
+  width: 320px;
+  height: 320px;
+  background: rgba(59, 130, 246, 0.12);
+  filter: blur(110px);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.contact p{
-color:#bbb;
-margin-bottom:40px;
+.contact-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 70px;
 }
 
-.contact-form{
-max-width:700px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:20px;
+/* ===========================
+   CONTACT INFORMATION
+=========================== */
+
+.contact-info {
+  max-width: 480px;
+}
+
+.contact-info .eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #a78bfa;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.contact-info h2 {
+  margin: 0 0 22px;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.2;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #c4b5fd,
+    #60a5fa
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-info > p {
+  margin-bottom: 32px;
+  color: #a5aec5;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ===========================
+   SOCIAL LINKS
+=========================== */
+
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px;
+  color: #d1d5e5;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  background: rgba(15, 20, 40, 0.75);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 13px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.social-links a svg {
+  color: #a78bfa;
+  font-size: 21px;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-4px);
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.12);
+}
+
+.social-links a:hover svg {
+  color: #60a5fa;
+}
+
+/* ===========================
+   CONTACT FORM
+=========================== */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 35px;
+  background: rgba(15, 20, 40, 0.78);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+  border-radius: 22px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .contact-form input,
-.contact-form textarea{
-
-padding:16px;
-background:#111;
-border:none;
-border-radius:10px;
-color:white;
-font-size:1rem;
-
+.contact-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 16px 18px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  background: rgba(8, 11, 22, 0.8);
+  border: 1px solid #252b42;
+  border-radius: 11px;
+  outline: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
-.contact-form button{
-
-padding:16px;
-background:var(--primary);
-color:#111;
-border:none;
-border-radius:40px;
-cursor:pointer;
-font-weight:bold;
-
+.contact-form input {
+  min-height: 54px;
 }
 
-.contact-form button:hover{
-
-background:white;
-
+.contact-form textarea {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.7;
 }
 
-@media(max-width:768px){
-
-.contact{
-
-padding:70px 20px;
-
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #788198;
 }
 
-.contact h2{
-
-font-size:2.3rem;
-
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #8b5cf6;
+  background: rgba(12, 16, 32, 0.95);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
 }
 
+/* ===========================
+   SEND MESSAGE BUTTON
+=========================== */
+
+.contact-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 54px;
+  padding: 15px 24px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  border: none;
+  border-radius: 11px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
 }
 
-@media(max-width:480px){
-
-.contact{
-
-padding:60px 15px;
-
+.contact-form button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.35);
 }
 
-.contact h2{
-
-font-size:2rem;
-
+.contact-form button:active {
+  transform: translateY(0);
 }
 
+.contact-form button:focus-visible,
+.social-links a:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 4px;
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .contact-info {
+    max-width: 650px;
+  }
+
+  .contact-info h2 {
+    font-size: 40px;
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 75px 5%;
+  }
+
+  .contact-container {
+    gap: 35px;
+  }
+
+  .contact-info h2 {
+    font-size: 34px;
+  }
+
+  .contact-info > p {
+    font-size: 15px;
+  }
+
+  .social-links {
+    gap: 12px;
+  }
+
+  .social-links a {
+    padding: 14px 12px;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .social-links a svg {
+    font-size: 19px;
+  }
+
+  .contact-form {
+    padding: 22px;
+    gap: 17px;
+    border-radius: 17px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .contact-form input {
+    min-height: 52px;
+  }
+
+  .contact-form textarea {
+    min-height: 140px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-links a,
+  .social-links a svg,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    transition: none;
+  }
 }

@@ -1,40 +1,78 @@
-import "../css/Services.css";
-import { FaLaptopCode, FaMobileAlt, FaPaintBrush } from "react-icons/fa";
+import {
+  FaCode,
+  FaMobileScreenButton,
+  FaPalette,
+  FaBolt
+} from "react-icons/fa6";
+
+const services = [
+  {
+    icon: <FaCode />,
+    title: "Web Development",
+    text: "Modern & responsive websites and web apps"
+  },
+  {
+    icon: <FaCode />,
+    title: "Frontend Development",
+    text: "Interactive & dynamic user interfaces"
+  },
+  {
+    icon: <FaMobileScreenButton />,
+    title: "UI/UX Design",
+    text: "Clean, modern & user-friendly designs"
+  },
+  {
+    icon: <FaBolt />,
+    title: "Problem Solving",
+    text: "Creative solutions for real challenges"
+  }
+];
 
 function Services() {
-  const services = [
-    {
-      icon: <FaLaptopCode />,
-      title: "Web Development",
-      text: "Modern and responsive websites built with React.",
-    },
-    {
-      icon: <FaMobileAlt />,
-      title: "Responsive Design",
-      text: "Websites optimized for desktop, tablet and mobile.",
-    },
-    {
-      icon: <FaPaintBrush />,
-      title: "UI Design",
-      text: "Clean and user-friendly interfaces with modern styling.",
-    },
-  ];
-
   return (
-    <section className="services" id="services">
-      <h2>Services</h2>
+    <section className="section services" id="services">
 
-      <div className="services-grid">
-        {services.map((service, index) => (
-          <div className="service-card" key={index}>
-            <div className="service-icon">{service.icon}</div>
+      <div className="container services-container">
 
-            <h3>{service.title}</h3>
+        <div className="services-intro">
 
-            <p>{service.text}</p>
-          </div>
-        ))}
+          <span className="eyebrow">
+            WHAT I DO
+          </span>
+
+          <h2>
+            Turning Ideas Into Reality
+          </h2>
+
+          <p>
+            I build modern web applications that are fast,
+            responsive and user-friendly.
+          </p>
+
+        </div>
+
+        <div className="services-grid">
+
+          {services.map((service, index) => (
+
+            <div className="service-card" key={index}>
+
+              <div className="service-icon">
+                {service.icon}
+              </div>
+
+              <h3>{service.title}</h3>
+
+              <p>{service.text}</p>
+
+            </div>
+
+          ))}
+
+        </div>
+
       </div>
+
     </section>
   );
 }

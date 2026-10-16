@@ -1,55 +1,67 @@
-import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
-import "../css/Footer.css";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaWhatsapp
+} from "react-icons/fa";
 
 function Footer() {
   return (
-
     <footer className="footer">
 
-      <h2>Phinehas John</h2>
+      <div className="container footer-container">
 
-      <p>
-        Frontend React Developer
-      </p>
-      <div className="footer-contact">
-  <a
-    href="https://wa.me/2348125374873"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="WhatsApp"
-  >
-    <FaWhatsapp />
-  </a>
+        <div className="footer-brand">
 
-  <a
-    href="https://www.linkedin.com/in/john-peter-0385482bb"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="LinkedIn"
-  >
-    <FaLinkedin />
-  </a>
-</div>
-      <p> 📍Nigeria </p>
+          <div className="logo">
+            JP<span>.</span>
+          </div>
 
-      <div className="footer-links">
+          <p>
+            Building digital experiences
+            <br />
+            one project at a time.
+          </p>
 
-        <a href="#home">Home</a>
+        </div>
 
-        <a href="#about">About</a>
+        <div className="footer-links">
 
-        <a href="#projects">Projects</a>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
 
-        <a href="#contact">Contact</a>
+        </div>
+
+        <div className="footer-right">
+
+          <div>
+
+            <a href="#">
+              <FaGithub />
+            </a>
+
+            <a href="#">
+              <FaLinkedinIn />
+            </a>
+
+            <a href="#">
+              <FaWhatsapp />
+            </a>
+
+          </div>
+
+          <small>
+            © 2026 Phinehas John. All rights reserved.
+          </small>
+
+        </div>
 
       </div>
 
-      <p className="copyright">
-        © 2026 Phinehas John. All Rights Reserved.
-      </p>
-
     </footer>
-
   );
 }
 

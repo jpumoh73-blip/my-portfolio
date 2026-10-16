@@ -1,0 +1,234 @@
+
+/* =========================
+   SKILL CARD
+========================= */
+
+.skill-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 26px;
+  background: linear-gradient(
+    145deg,
+    rgba(20, 24, 45, 0.92),
+    rgba(10, 13, 27, 0.97)
+  );
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/* Gradient accent */
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #a855f7, #38bdf8);
+  transition: width 0.4s ease;
+}
+
+.skill-card:hover::before {
+  width: 100%;
+}
+
+.skill-card:hover {
+  border-color: rgba(168, 85, 247, 0.65);
+  background: linear-gradient(
+    145deg,
+    rgba(25, 28, 52, 0.96),
+    rgba(12, 15, 32, 0.98)
+  );
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.25),
+    0 0 25px rgba(139, 92, 246, 0.12);
+}
+
+/* =========================
+   CARD TOP
+========================= */
+
+.skill-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   SKILL ICON
+========================= */
+
+.skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 55px;
+  height: 55px;
+  color: #c084fc;
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.16),
+    rgba(56, 189, 248, 0.1)
+  );
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  border-radius: 14px;
+  font-size: 1.65rem;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.skill-icon svg {
+  width: 27px;
+  height: 27px;
+}
+
+.skill-card:hover .skill-icon {
+  color: #ffffff;
+  background: linear-gradient(135deg, #9333ea, #4f46e5);
+  border-color: transparent;
+  box-shadow: 0 0 22px rgba(139, 92, 246, 0.25);
+}
+
+/* =========================
+   CATEGORY BADGE
+========================= */
+
+.skill-category {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  color: #a5b4fc;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  border-radius: 7px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* =========================
+   SKILL NAME
+========================= */
+
+.skill-card h3 {
+  margin: 0 0 22px;
+  color: #f8fafc;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.skill-card:hover h3 {
+  color: #c4b5fd;
+}
+
+/* =========================
+   PROFICIENCY
+========================= */
+
+.skill-level {
+  margin-top: auto;
+}
+
+.skill-level-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.skill-level-info span:last-child {
+  color: #c4b5fd;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Progress track */
+.skill-progress {
+  width: 100%;
+  height: 7px;
+  background: rgba(148, 163, 184, 0.12);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+/* Animated progress fill */
+.skill-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9333ea, #6366f1, #38bdf8);
+  border-radius: inherit;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.35);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .skill-card {
+    padding: 22px;
+  }
+
+  .skill-card-top {
+    margin-bottom: 20px;
+  }
+
+  .skill-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .skill-card h3 {
+    font-size: 1.05rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .skill-card {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .skill-category {
+    padding: 5px 8px;
+    font-size: 0.68rem;
+  }
+
+  .skill-level-info {
+    font-size: 0.76rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .skill-card,
+  .skill-card::before,
+  .skill-icon,
+  .skill-card h3 {
+    transition: none;
+  }
+}
